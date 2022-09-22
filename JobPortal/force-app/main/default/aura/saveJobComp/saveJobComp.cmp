@@ -1,0 +1,41 @@
+<aura:component implements="flexipage:availableForAllPageTypes" controller="jobSeekerAppliedJob" >
+
+       
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"  /> 
+    <aura:attribute name="jobSaved" type="string" />
+   
+    <aura:attribute name="res1" type="List"></aura:attribute>
+   
+    
+       
+
+    <lightning:card title="Saved jobs">
+
+        <ul > <pre style="border: 2px solid grey;">
+            <div style="background-color: #bebebe;"><b> Company Name     Job Position</b></div>
+            
+    
+    
+          
+        </pre>
+
+            <aura:iteration items="{!v.jobSaved}" var="lil" >
+
+
+                <span class="grid-container">
+                
+                    <div class="font-color-style">
+                        
+                        <div class="inner-element-font">      {!lil.job_Title__r.Company_Name__c}</div>
+                    </div>
+                    <div class="font-color-style">
+                       
+                        <div class="inner-element-font">     {!lil.job_Title__r.Name}</div>
+                    </div>
+                </span> 
+            
+           
+            </aura:iteration>
+        </ul>
+ </lightning:card>
+</aura:component>

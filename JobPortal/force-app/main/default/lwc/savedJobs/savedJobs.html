@@ -1,0 +1,13 @@
+<template>
+    <lightning-card  style="background-color: burlywood">
+        <a href="#">Saved Jobs</a>
+         <template for:each={showSavedDetails} for:item="SavedJobs">
+            <li key={SavedJobs.Id}>
+                <a href="#" >{SavedJobs.job_Title__c} </a>     
+                <a href="#" > {SavedJobs.SeekerName__c} </a> 
+                </li>
+       </template>
+    </lightning-card>
+    
+    
+</template>

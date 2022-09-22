@@ -1,0 +1,23 @@
+<aura:component controller="SeekerProfileInfo" implements="flexipage:availableForAllPageTypes">
+
+  <aura:handler  name="init" value="this" action="{!c.doInit}"/>
+  <aura:attribute name="userInfo" type="List"/> 
+  
+  <lightning:card>
+    <div style="text-align: center;background-color:ghostwhite ;padding: 20px;">
+    <span class="slds-avatar slds-avatar_profile-image-large">
+      <span class="slds-assistive-text">Person name</span>
+    </span>
+ 
+ 
+    <aura:iteration items="{!v.userInfo}"  var="u" >
+      <p> NAME :{!u.Name} </p>
+      <p>EMAIL : {!u.Email}</p>
+   
+    </aura:iteration>
+  </div>
+  </lightning:card>
+  
+  
+
+</aura:component>	

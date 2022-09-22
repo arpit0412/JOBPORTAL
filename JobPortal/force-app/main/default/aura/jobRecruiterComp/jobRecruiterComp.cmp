@@ -1,0 +1,71 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="bDisabledDependentFld" type="boolean" default="true"/> 
+    <aura:attribute name="listControllingValues" type="list" default="[]" description="to store controller field values"/>    
+    <aura:attribute name="option" type="List" default="[
+            {'label': '1', 'value': '1'},
+            {'label': '2', 'value': '2'},
+            {'label': '3', 'value': '3'},
+            {'label': '4', 'value': '4'},
+            {'label': '5', 'value': '5'},
+            ]"/>
+
+    <aura:attribute name="options" type="List" default="[
+            {'label': '01', 'value': '1LPA'},
+            {'label': '02', 'value': '2LPA'},
+            {'label': '03', 'value': '3LPA'},
+            {'label': '04', 'value': '4LPA'},
+            {'label': '05', 'value': '5LPA'},
+            {'label': '06', 'value': '6LPA'},
+            {'label': '07', 'value': '7LPA'},
+            {'label': '08', 'value': '8LPA'},
+            {'label': '09', 'value': '9LPA'},
+            {'label': '10', 'value': '10LPA'},
+            ]"/>
+
+    <aura:attribute name="objDetail" type="Job_Recruiter__c" default="{'sobjectType' : 'Job_Recruiter__c'}"/>
+    <aura:attribute name="dependingFieldAPI" type="string" default="City__c" description="Store field API Name of dependent field"/>
+        
+    <lightning:card title="Recruiter Page">
+        <div class="input-field-container">
+            <h3 class="font"><b>Job Recruiter Profile Page</b></h3> 
+            
+            <lightning:input class="input-field" type="text" name="txtCName" label="Company Name" />
+            <lightning:input class="input-field" type="text" name="txtJTitle" label="Job Title" onchange="{!c.handleJobTitle}" />
+            <lightning:textarea  class="input-field" type="text" label="Job Description" onchange="{!c.handleJobTitle}" />
+            <lightning:input class="input-field" type="date" label="Job Posted Date" onchange="{!c.handlePostedDate}" />
+            <lightning:input class="input-field" type="date" label="Job End Date" onchange="{!c.handleEndDate}" />
+            <lightning:input class="input-field" type="date" label="Job Location" onchange="{!c.handleLocation}" />
+
+            <lightning:combobox name="progress" label="Experience" value="inProgress" placeholder="Select Progress" options="{! v.option }" onchange="{! c.handleExperience }"/>
+            <lightning:combobox name="prog" label="Salary" placeholder="Select Salary" options="{! v.options }" onchange="{! c.handleSalary }"/>
+
+            <lightning:input class="input-field" type="number" label="Phone" onchange="{!c.handlePhone}" />
+            <lightning:textarea class="input-field" label="Address" onchange="{!c.handleAddress}"/>
+            
+            <!--Controller Field-->
+              <lightning:layoutItem size="4" padding="around-small">
+                <lightning:select name="controllerFld"
+                                  label="State"
+                                  value="{!v.objDetail.State__c}"
+                                  onchange="{!c.onControllerFieldChange}">
+                   <aura:iteration items="{v.listControllingValues}" var="val">
+                        <option value="{!val}">{!val}</option>
+                    </aura:iteration>           
+                </lightning:select>
+              </lightning:layoutItem>
+
+              <!--Dependent Field-->
+              <lightning:layoutItem size="4" padding="around-small">
+                <lightning:select name="dependentFld"
+                                  label="City"
+                                  value="{!v.objDetail.City__c}"
+                                  disabled="bDisabledDependentFld">
+                <aura:iteration items="{!v.listDependingValues}" var="val">
+                    <option value="{!val}">{!val}</option>
+                </aura:iteration>
+                 </lightning:select>
+              </lightning:layoutItem>
+            </div>
+    </lightning:card>
+    
+</aura:component>

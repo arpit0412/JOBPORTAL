@@ -1,0 +1,29 @@
+<template>
+    <lightning-card >
+        <div   >
+            <lightning-avatar style="margin-left :30px" variant="circle" src="https://www.lightningdesignsystem.com/assets/images/avatar2.jpg" initials="AW" fallback-icon-name="standard:person_account" alternative-text="Amy Weaver" class="slds-m-right_small"></lightning-avatar>
+      
+        
+           <div>
+             <template for:each = {showProfileDetails} for:item="profileDetail" >
+                <h1 key={profileDetail.Id}>
+                   
+                    <p class="container"><b> {profileDetail.Name}</b></p> 
+                    <p class="container">  {profileDetail.Email}</p><br>
+                    
+
+                     
+                </h1>
+
+
+                
+
+            </template>
+           </div>
+
+           
+
+       
+        </div>
+    </lightning-card>
+</template>

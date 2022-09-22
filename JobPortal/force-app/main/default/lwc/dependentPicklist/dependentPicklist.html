@@ -1,0 +1,36 @@
+<template>
+    <lightning-card>
+        <lightning-combobox
+        name="state"
+        label="Select State"
+        options={StateOptions}
+        onchange={handleStateChange}
+        placeholder="Select the state"
+        >
+
+        </lightning-combobox>
+
+
+
+        <lightning-combobox
+        label="Select City"
+        options={CityOptions}
+        placeholder ="Select the city"
+        >
+
+        </lightning-combobox>
+    </lightning-card>
+
+
+
+
+
+    <!-- <c:multiPicklist
+        object-api-name="JobRecruiter"
+        picklist-details ={picklistLevelfourDetails}
+        onpicklisthandler ={picklistLevelHandler}
+        layout =" horizontal">
+
+    </c:multiPicklist> -->
+    
+</template>

@@ -1,0 +1,89 @@
+<aura:component controller="AppliedJobsClass1" implements="flexipage:availableForAllPageTypes">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"  />
+        <aura:attribute name="seekers" type="List" />
+        <aura:attribute name="seekDetails" type="string" />
+
+        <aura:attribute name="Name" type="String" />
+        <aura:attribute name="Cname" type="String" />
+        <aura:attribute name="Location" type="String" />
+        <aura:attribute name="Email" type="String" />
+        <aura:attribute name="JobPostedDate" type="date" />
+        <aura:attribute name="JobEndDate" type="date" />
+        <aura:attribute name="Salary" type="integer" />
+        <aura:attribute name="Experience" type="integer" />
+        <aura:attribute name="State" type="String" />
+        <aura:attribute name="City" type="String" /> 
+        <aura:attribute name="selecteditem" type="String"></aura:attribute>
+
+        <aura:attribute name="show" type="boolean" default="false"></aura:attribute>
+
+<!-- <aura:attribute name="JobInfo" type="boolean" default="false" />
+<aura:attribute name="closeModel" type="boolean" />
+
+
+
+
+-->
+
+
+
+
+<lightning:card title="seekerList" class="kala">
+    <aura:iteration items="{!v.seekers}" var="seek">
+    <a  onclick="{!c.handleClick}"  data-id="{seek.id}" data-name= "{seek.seekerName.Name}">
+<div >
+    <p class="inline"> {!seek.job_Title__r.Name} </p>
+       <p class="inline">{!seek.SeekerName__r.Name} </p> 
+</div>   
+        
+</a>
+</aura:iteration>
+</lightning:card>
+
+<lightning:card>
+    <aura:if isTrue="{!v.show}">
+
+<div  key="{!seek.Id}" class="text-blue">
+    <div style="background-color: #D3D3D3;">
+        <pre style="margin-left:10px ;">
+         
+         
+         
+            
+          <p><b>Job Title :      </b>{!(v.Name)} </p>
+          <p><b>Company Name :   </b>{!(v.Cname)}</p>
+          <p><b>Job Location :  </b> {!(v.Location)}</p>
+          <p><b>Email :         </b> {!(v.Email)}</p>
+          <p><b>JobPostedDate : </b> {!(v.JobPostedDate)}</p>
+          <p><b>JobEndDate :    </b> {!(v.JobEndDate)}</p>
+          <p><b>Salary :        </b> {!(v.Salary)}</p>
+          <p><b>Experience :    </b> {!(v.Experience)}</p>
+           <p><b>Sate       :    </b> {!(v.State)}</p>
+          <p><b>City       :    </b> {!(v.City)}</p> 
+
+            
+        </pre>
+      
+    </div>
+    </div>
+</aura:if>
+</lightning:card>
+
+</aura:component>	
+
+
+
+
+
+    <!-- <div class="Details">
+   <p class="back-color"><b>Name :  </b> {!seek.Name}</p><br />
+   <p class="back-color"><b>Last Name :  </b>{seek.Last_Name__c}</p><br />
+   <p class="back-color"><b>Job Skills :  </b>{seek.Job_Skills__c}</p><br />
+   <p class="back-color"><b>Job Location :  </b>{seek.Job_Location__c}</p><br/>
+   <p class="back-color"><b>Email : </b> {seek.Email__c}</p><br />
+   <p class="back-color"><b>EXPERIENCE :    </b> {seek.Experience__c}</p><br />
+    
+        </div> -->
+     
+
+

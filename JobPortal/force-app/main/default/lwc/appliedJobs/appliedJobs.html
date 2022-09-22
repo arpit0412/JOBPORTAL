@@ -1,0 +1,38 @@
+<template>
+   <lightning-card   >
+
+
+    
+    
+
+    <!-- <lightning-button label="Applied jobs" variant="brand" onclick={handleViewAppliedJobs}></lightning-button>  -->
+      
+    <!-- <a href="#">Applied Jobs</a>
+    <template for:each={ShowJobDetails} for:item="ApJobs">
+            <li key={ApJobs.Id}>
+                <a href="#" >{ApJobs.job_Title__c} </a>     
+                <a href="#" > {ApJobs.SeekerName__c} </a> 
+            </li>  
+       </template>  -->
+
+
+       <lightning-button label="Applied Jobs" onclick={handleAppliedJobs}></lightning-button>
+       
+
+       <ul>
+        <template for:each={lst} for:item="ls">              
+            
+            <li key={ls.Id}>
+                <div class="searchSection"  >
+                    <p>{ls.jobTitle.Name}</p>
+                    <p>{ls.seekerName.Name}</p>
+                </div>
+          </li>
+            
+    </template>
+</ul>
+
+   </lightning-card>
+
+    
+</template>

@@ -1,0 +1,33 @@
+<template>
+    <lightning-card>
+        
+        <ul>
+            <template for:each={lst} for:item="ls">              
+        
+                <h1 key={ls.id}>
+                    <a onclick={handleClick} data-id={ls.id} data-name={ls.seekerName.Name} >
+                   
+                    <span class="grid-container">
+                        
+                        <div class="font-color-style">
+                            
+                            <div class="inner-element-font">{ls.seekerName.Name}</div>
+                        </div>
+                        <div class="font-color-style">
+                           
+                            <div class="inner-element-font">{ls.jobTitle.Name}</div>
+                        </div>
+                    </span> 
+                </a>
+                </h1>
+            
+        </template>
+ </ul>
+ </lightning-card>
+
+
+    
+ 
+
+    
+</template>
