@@ -16,7 +16,9 @@
         <aura:attribute name="selecteditem" type="String"></aura:attribute>
 
         <aura:attribute name="show" type="boolean" default="false"></aura:attribute>
-
+<h1>helooooo
+    
+</h1>
 <!-- <aura:attribute name="JobInfo" type="boolean" default="false" />
 <aura:attribute name="closeModel" type="boolean" />
 
@@ -35,7 +37,7 @@
     <p class="inline"> {!seek.job_Title__r.Name} </p>
        <p class="inline">{!seek.SeekerName__r.Name} </p> 
 </div>   
-<h1>helloooooo</h1>
+
         
 </a>
 </aura:iteration>
