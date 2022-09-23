@@ -16,7 +16,9 @@
         <aura:attribute name="selecteditem" type="String"></aura:attribute>
 
         <aura:attribute name="show" type="boolean" default="false"></aura:attribute>
-<h1>heyyyyyyy</h1>
+<h1>helooooo
+    
+</h1>
 <!-- <aura:attribute name="JobInfo" type="boolean" default="false" />
 <aura:attribute name="closeModel" type="boolean" />
 
